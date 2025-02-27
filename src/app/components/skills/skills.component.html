@@ -1,0 +1,26 @@
+<div class="skills-page">
+    <h2 class="skills-title">Skills</h2>
+  
+    <div class="skills-container">
+      <p-card *ngFor="let skill of skills" class="skill-card" [style]="{ width: '200px', height: '200px' }"
+        (click)="openSkillPopup(skill)">
+        <ng-template pTemplate="header">
+          <h3>{{ skill.name }}</h3>
+        </ng-template>
+        <ng-template pTemplate="content">
+          <p>{{ skill.description }}</p>
+        </ng-template>
+      </p-card>
+    </div>
+  
+    <!-- Popup Dialog with Animation -->
+    <p-dialog [(visible)]="showPopup" [modal]="true" [header]="selectedSkill?.name"
+      [style]="{ width: '500px',height:'300px', borderRadius: '15px', backdropFilter: 'blur(10px)' }" [dismissableMask]="true">
+      
+      <div class="popup-content">
+        <i class="pi pi-star popup-icon"></i>
+        <p>{{ selectedSkill?.description }}</p>
+      </div>
+    </p-dialog>
+  </div>
+  

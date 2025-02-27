@@ -1,0 +1,10 @@
+<p-card *ngFor="let project of projects">
+    <ng-template pTemplate="header">
+      <h3>{{ project.name }}</h3>
+    </ng-template>
+    <ng-template pTemplate="content">
+      <p>{{ project.description }}</p>
+      <a [href]="project.link" target="_blank">View Project</a>
+    </ng-template>
+  </p-card>
+  

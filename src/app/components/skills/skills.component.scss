@@ -1,0 +1,87 @@
+/* Page Styling */
+.skills-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Center the "Skills" Title */
+  .skills-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive Grid Layout */
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* Skill Cards */
+  .skill-card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    color: white;
+  }
+  
+  /* Hover Effect */
+  .skill-card:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Click Effect */
+  .skill-card:active {
+    transform: scale(0.9);
+  }
+  
+  /* Popup Styling */
+  ::ng-deep .p-dialog {
+    animation: fadeIn 0.4s ease-in-out; /* ✅ Smooth fade-in effect */
+    backdrop-filter: blur(10px); /* ✅ Modern blur effect */
+    background: rgba(255, 255, 255, 0.2); /* ✅ Glassmorphism effect */
+    border-radius: 15px;
+  }
+  
+  /* Popup Content */
+  .popup-content {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Popup Icon */
+  .popup-icon {
+    font-size: 40px;
+    color: #ffcc00;
+    animation: popUp 0.5s ease-in-out alternate infinite;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes popUp {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.2);
+    }
+  }
+  

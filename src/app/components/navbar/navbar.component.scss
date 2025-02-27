@@ -1,0 +1,20 @@
+.nav-links {
+    display: flex; /* ✅ Align buttons in a row */
+    gap: 10px; /* ✅ Adds space between buttons */
+    justify-content: center; /* ✅ Centers navigation buttons */
+    align-items: center; /* ✅ Aligns buttons properly */
+  }
+  
+  /* Optional: Adjust Menubar Styling */
+  p-menubar {
+    padding: 10px 20px; /* ✅ Add padding inside the navbar */
+    background-color: #333; /* Dark background */
+    border-radius: 5px; /* ✅ Rounded navbar edges */
+  }
+  
+  /* Style the PrimeNG Buttons */
+  p-button {
+    font-weight: bold;
+    border-radius: 5px; /* ✅ Smooth button corners */
+  }
+  

@@ -1,0 +1,42 @@
+<div class="experience-page">
+    <h2 class="experience-title">Experience</h2>
+  
+    <p-timeline [value]="experiences" [align]="'left'" [layout]="'vertical'">
+      <ng-template let-exp pTemplate="content">
+        <div class="experience-container">
+          <p-card class="experience-card" (click)="openExperiencePopup(exp)">
+            <ng-template pTemplate="header">
+              <h3>{{ exp.role }}</h3>
+            </ng-template>
+            <ng-template pTemplate="content">
+              <p><strong>Company:</strong> 
+                <a [href]="exp.link" target="_blank">{{ exp.company }}</a>
+              </p>
+              <p><strong>Duration:</strong> {{ exp.duration }}</p>
+              <p><strong>Description:</strong></p>
+              <ul>
+                <li *ngFor="let point of exp.description.split('\n')">{{ point }}</li>
+              </ul>
+              <p><strong>Technologies:</strong></p>
+              <div class="tech-tags">
+                <p-tag *ngFor="let tech of exp.technologies" [value]="tech"></p-tag>
+              </div>
+            </ng-template>
+          </p-card>
+        </div>
+      </ng-template>
+    </p-timeline>
+  
+    <!-- Popup Dialog for Experience Details -->
+    <p-dialog [(visible)]="showPopup" [modal]="true" [header]="selectedExperience?.role" [style]="{ width: '450px' }">
+      <div class="popup-content">
+        <h3>{{ selectedExperience?.company }}</h3>
+        <p><strong>Duration:</strong> {{ selectedExperience?.duration }}</p>
+        <p>{{ selectedExperience?.description }}</p>
+        <div class="tech-tags">
+          <p-tag *ngFor="let tech of selectedExperience?.technologies" [value]="tech"></p-tag>
+        </div>
+      </div>
+    </p-dialog>
+  </div>
+  
